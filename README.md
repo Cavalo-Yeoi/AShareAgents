@@ -69,33 +69,46 @@ streamlit run frontend/app.py
 ## 🏗️ 项目结构
 ```
 AShareAgents/
-├── AShareAgents/                 # 核心 Python 包
-│   ├── agents/                   # 分析师、研究员、交易员与风控 Agent
-│   ├── api/                      # API 模块
-│   ├── datasource/               # 数据源路由与供应商适配器
-│   │   ├── astock/               # A股数据聚合、回退与格式化
-│   │   ├── alphaVantage/         # Alpha Vantage
-│   │   ├── yFinance/             # Yahoo Finance
-│   │   ├── eastMoney/            # 东方财富
-│   │   ├── mootdx/               # 通达信行情
-│   │   ├── sinaFinance/          # 新浪财经
-│   │   ├── tencentFinance/       # 腾讯财经
-│   │   ├── tongHuaShun/          # 同花顺
-│   │   ├── clsFinance/           # 财联社
-│   │   └── baiduFinance/         # 百度股市通
-│   ├── llm/                      # LLM 客户端、工厂与模型目录
-│   ├── memory/                   # 记忆系统
-│   ├── models/                   # 结构化输出数据模型
-│   ├── rag/                      # RAG 模块
-│   ├── storage/                  # 存储模块
-│   ├── tools/                    # Agent 工具与数据工具
-│   ├── workflows/                # LangGraph 工作流编排
-│   ├── config.py                 # 默认运行配置
-│   └── logging_config.py         # 日志配置
-├── frontend/                     # Streamlit 前端
-├── .env.example                  # 环境变量示例
-├── main.py                       # 示例入口
-├── pyproject.toml                # 项目与依赖配置
-├── requirements.txt              # 依赖清单
-└── README.md                     # 项目说明
+│
+├── AShareAgents/                  # 核心 Python 业务包
+│   │
+│   ├── agents/                    # 多智能体分析模块
+│   ├── api/                       # API 接口模块
+│   ├── datasource/                # A 股行情及财经数据源
+│   │   ├── astock/                # A股数据聚合、回退与格式化
+│   │   ├── alphaVantage/          # Alpha Vantage
+│   │   ├── yFinance/              # Yahoo Finance
+│   │   ├── eastMoney/             # 东方财富
+│   │   ├── mootdx/                # 通达信行情
+│   │   ├── sinaFinance/           # 新浪财经
+│   │   ├── tencentFinance/        # 腾讯财经
+│   │   ├── tongHuaShun/           # 同花顺
+│   │   ├── clsFinance/            # 财联社
+│   │   └── baiduFinance/          # 百度股市通
+│   │
+│   ├── llm/                       # LLM 客户端与模型配置
+│   ├── memory/                    # 智能体记忆模块
+│   ├── models/                    # 结构化数据模型
+│   ├── rag/                       # RAG 检索模块
+│   │
+│   ├── evaluation/                # RAG 评测模块
+│   │   ├── configs/               # 评测配置
+│   │   ├── scripts/               # 评测执行脚本
+│   │   ├── ingestion.py           # 文档处理与入库
+│   │   ├── retrieval.py           # 检索策略
+│   │   ├── generation.py          # 生成评测相关逻辑
+│   │   ├── metrics.py             # 评测指标
+│   │   └── io.py                  # 评测文件与路径管理
+│   │
+│   ├── storage/                   # 存储模块
+│   ├── tools/                     # Agent 工具
+│   ├── workflows/                 # LangGraph 工作流
+│   ├── config.py                  # 项目配置
+│   └── logging_config.py          # 日志配置
+│
+├── main.py                        # 项目入口
+├── pyproject.toml                 # 项目与依赖配置
+├── requirements.txt               # Python 依赖清单
+├── .gitignore                     # Git 忽略规则
+└── README.md                      # 项目说明
 ```
