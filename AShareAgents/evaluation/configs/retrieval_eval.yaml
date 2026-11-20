@@ -1,0 +1,25 @@
+dataset_version: rag_eval_v1
+seed: 20261116
+strategies: [BM25, Dense, RRF, RRF+Reranker]
+dense_top_k: 20
+bm25_top_k: 20
+bm25_candidate_pool: all_eligible_chunks
+rrf_k: 60
+rerank_top_n: 30
+max_rank: 20
+generation_top_k: 5
+metric_ks: [5, 10, 20]
+positive_grade: 2
+ndcg_gain: exponential_2_power_rel_minus_1
+knowledge_type_filter: true
+company_scope_filter: true
+publication_date_filter: true
+date_verified_only: true
+embedding_model: text-embedding-v4
+embedding_dimension: 512
+reranker_model: qwen3-rerank
+cloud_cache: data/rag_eval_v1/knowledge_base/cloud_cache.sqlite
+knowledge_database: data/rag_eval_v1/knowledge_base/knowledge_v1.sqlite
+annotation_basis: pending_review_machine_labels
+selection_rule: dev_parent_ndcg_at_5_only
+test_parameter_tuning: prohibited
