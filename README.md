@@ -11,7 +11,7 @@ AShareAgents 基于现代 Agent 架构设计，融合 Multi-Agent 协同、RAG�
 ### 项目安装
 1. 克隆 AShareAgents：
 ```bash
-git clone https://github.com/EPxiaoma/AShareAgents.git
+git clone https://github.com/Cavalo-Yeoi/AShareAgents.git
 ```
 2. 进入项目目录：
 ```bash
